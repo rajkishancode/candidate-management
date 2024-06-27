@@ -1,10 +1,10 @@
+import AppRoutes from "./routes/AppRoutes";
+import { AuthProvider } from "./context/AuthContext";
 function App() {
   return (
-    <>
-      <h1 className="text-3xl text-red-500 text-center">
-        Welcome to vite with tailwind css and React
-      </h1>
-    </>
+    <AuthProvider>
+      <AppRoutes />
+    </AuthProvider>
   );
 }
 
