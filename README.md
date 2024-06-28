@@ -102,25 +102,32 @@ Takes id  and delete  the candidate.
     - The application will be available at http://localhost:5173.
 
 ```
-src/
-│
-├── components/
-│   ├── CandidateCard.jsx
-│   ├── CandidateDetails.jsx
-│   ├── CandidateForm.jsx
-│   ├── EditCandidateForm.jsx
-│   └── Header.jsx
-│
-├── pages/
-│   ├── HomePage.jsx
-│   ├── LoginPage.jsx
-│   └── NotFoundPage.jsx
-│
-├── api/
-│   └── candidates.js
-│
-└── routes/
-    └── AppRoutes.jsx
+your-project/
+├── src/
+│   ├── components/
+│   │   ├── CandidateCard.jsx
+│   │   ├── CandidateDetails/
+│   │   │   ├── CandidateDetails.jsx
+│   │   │   ├── CandidateSummary.jsx
+│   │   │   ├── EducationForm.jsx
+│   │   │   ├── ExperienceForm.jsx
+│   │   │   ├── PersonalDetailsForm.jsx
+│   │   │   ├── SkillsForm.jsx
+│   │   ├── CandidateForm.jsx
+│   │   └── Header.jsx
+│   ├── pages/
+│   │   ├── HomePage.jsx
+│   │   ├── LoginPage.jsx
+│   │   └── NotFoundPage.jsx
+│   ├── api/
+│   │   └── candidates.js
+│   └── routes/
+│       └── AppRoutes.jsx
+├── jest.config.js
+├── package.json
+├── setupTests.js
+└── yarn.lock
+
 ```
 ## JSON Structure of a Candidate
 
