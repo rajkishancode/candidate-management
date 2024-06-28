@@ -84,7 +84,7 @@ const CandidateForm = ({ onSave }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission, e.g., send candidate data to an API
+    // Handle form submission,send candidate data to an API
     console.log(candidate);
     onSave(candidate);
   };

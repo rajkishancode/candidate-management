@@ -5,8 +5,6 @@ import {
   signInWithPopup,
   onAuthStateChanged,
   signOut,
-  setPersistence,
-  browserLocalPersistence,
 } from "firebase/auth";
 
 // Your Firebase configuration object
@@ -24,15 +22,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Set persistence
-// Set persistence
-setPersistence(auth, browserLocalPersistence)
-  .then(() => {
-    console.log("Persistence set to browserLocalPersistence");
-  })
-  .catch((error) => {
-    console.error("Error setting persistence:", error);
-  });
 export const loginWithGoogle = async () => {
   const provider = new GoogleAuthProvider();
   const result = await signInWithPopup(auth, provider);

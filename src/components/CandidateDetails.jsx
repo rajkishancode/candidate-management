@@ -1,84 +1,3 @@
-// const CandidateDetails = ({ candidate, onEdit, onDelete }) => {
-//   return (
-//     <div className="bg-white shadow-md rounded-lg p-6 mb-4">
-//       <div className="flex items-center space-x-6 mb-6">
-//         <img
-//           src={candidate.profile_picture}
-//           alt={candidate.name}
-//           className="w-20 h-20 rounded-full object-cover"
-//         />
-//         <div>
-//           <h2 className="text-2xl font-bold text-gray-900">{candidate.name}</h2>
-//           <p className="text-gray-600">{candidate.email}</p>
-//           <p className="text-gray-600">{candidate.phone}</p>
-//           <p className="text-gray-600">{candidate.address}</p>
-//           <p className="text-gray-600">Gender: {candidate.gender}</p>
-//         </div>
-//       </div>
-//       <div className="mb-6">
-//         <h3 className="text-xl font-semibold text-gray-800 mb-2">Hobbies</h3>
-//         <ul className="list-disc list-inside text-gray-700">
-//           {candidate?.hobbies?.map((hobby, index) => (
-//             <li key={index}>{hobby}</li>
-//           ))}
-//         </ul>
-//       </div>
-//       <div className="mb-6">
-//         <h3 className="text-xl font-semibold text-gray-800 mb-2">Education</h3>
-//         <ul className="list-disc list-inside text-gray-700">
-//           {candidate.education.map((edu, index) => (
-//             <li key={index}>
-//               <strong>{edu.institute}</strong> ({edu.degree}), {edu.percentage}%
-//               - {edu.pass_out_year}
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-//       <div className="mb-6">
-//         <h3 className="text-xl font-semibold text-gray-800 mb-2">Skills</h3>
-//         <ul className="list-disc list-inside text-gray-700">
-//           {candidate.skills.map((skill, index) => (
-//             <li key={index}>
-//               {skill.name} - {skill.experience} years of experience
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-//       <div className="mb-6">
-//         <h3 className="text-xl font-semibold text-gray-800 mb-2">Experience</h3>
-//         <ul className="list-disc list-inside text-gray-700">
-//           {candidate.experience.map((exp, index) => (
-//             <li key={index}>
-//               <strong>{exp.company}</strong>: {exp.project} ({exp.role})
-//               <br />
-//               Team Size: {exp.team_size}, Duration: {exp.duration_from} to{" "}
-//               {exp.duration_to}
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-//       <div className="flex space-x-4">
-//         <button
-//           onClick={onEdit}
-//           className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300"
-//         >
-//           Edit
-//         </button>
-
-//         <button
-//           onClick={onDelete}
-//           className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition duration-300"
-//         >
-//           Delete
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default CandidateDetails;
-//backup code
-
 import { useState } from "react";
 
 const CandidateDetails = ({ candidate, onSave, onDelete }) => {
@@ -88,6 +7,7 @@ const CandidateDetails = ({ candidate, onSave, onDelete }) => {
 
   const handleEdit = () => {
     setIsEditing(true);
+    setEditedCandidate(candidate);
   };
 
   const handleCancel = () => {
@@ -109,27 +29,7 @@ const CandidateDetails = ({ candidate, onSave, onDelete }) => {
     setIsEditing(false);
     setCurrentStep(1);
   };
-  console.log("editedCandidate in CandidateDetails", editedCandidate);
-  // const handleChange = (e, arrayName, index, field) => {
-  //   const newValue = e.target.value;
 
-  //   setEditedCandidate((prevState) => {
-  //     const updatedArray = prevState[arrayName].map((item, i) => {
-  //       if (i === index) {
-  //         return {
-  //           ...item,
-  //           [field]: newValue,
-  //         };
-  //       }
-  //       return item;
-  //     });
-
-  //     return {
-  //       ...prevState,
-  //       [arrayName]: updatedArray,
-  //     };
-  //   });
-  // };
   const handleChange = (e, field, index = null, subfield = null) => {
     const value = e.target.value;
     if (index !== null && subfield !== null) {
