@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import CandidateCard from "../components/CandidateCard";
-import CandidateDetails from "../components/CandidateDetails";
+import CandidateDetails from "../components/CandidateDetails/CandidateDetails";
 import CandidateForm from "../components/CandidateForm";
 import Header from "../components/Header";
 import {
